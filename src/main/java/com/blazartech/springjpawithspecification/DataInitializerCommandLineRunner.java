@@ -8,6 +8,7 @@ import com.blazartech.springjpawithspecification.data.jpa.PersonEntity;
 import com.blazartech.springjpawithspecification.data.jpa.PersonTypValEntity;
 import com.blazartech.springjpawithspecification.data.jpa.repos.PersonEntityRepository;
 import com.blazartech.springjpawithspecification.data.jpa.repos.PersonTypValEntityRepository;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,7 @@ public class DataInitializerCommandLineRunner implements CommandLineRunner {
     private PersonTypValEntityRepository personTypValRepo;
     
     @Override
+    @Transactional
     public void run(String... args) throws Exception {
         logger.info("initializing data");
         
