@@ -8,7 +8,7 @@ package com.blazartech.springjpawithspecification;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaVendorAdapter;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter;
 
 /**
  *
@@ -19,7 +19,7 @@ public class JpaVendorAdapterConfiguration {
     
     @Bean
     public JpaVendorAdapter jpaVendorAdaptor() {
-        HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
+        EclipseLinkJpaVendorAdapter va = new EclipseLinkJpaVendorAdapter();
         va.setShowSql(true);
         va.setGenerateDdl(true);
         return va;

@@ -38,16 +38,6 @@ public class EntityManagerConfiguration {
         f.setJpaVendorAdapter(jpaVendorAdapter);
         f.setPersistenceUnitName("com.blazartech_SpringJPAWithSpecification_jar_1.0-SNAPSHOTPU");
         
-        // set the hibernate.hbm2ddl.auto property.  Hibernate desperately wants to do
-        // schema changes, which is obviously not right.  I've tried setting this
-        // property in the persistence.xml file, but hibernate doesn't seem to pick 
-        // it up.  So set it here.  And set it to an invalid date so that it doesn't
-        // do a thing.
-        Properties props = new Properties();
-        props.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-        props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect")); 
-        f.setJpaProperties(props);
-        
         return f;
     }
 }
